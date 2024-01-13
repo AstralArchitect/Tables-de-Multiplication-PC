@@ -26,15 +26,25 @@ int main()
 
     for (size_t i = 0; i < 12 /*c'est nombre de fois que tu veux répéter cette boucle */; i++)
     {
-        //vérification pour ne pas répéter plusieurs fois la même question
         int multiplieur{random(1, 12)};
+        //vérification pour ne pas répéter plusieurs fois la même question
+        bool isPresent;
+        while(isPresent)
+        {
         int arraySize = sizeof(verif) / sizeof(*verif);
-        bool isPresent = std::find(data, data + arraySize, target) != data + arraySize;
+        isPresent = std::find(verif, verif + arraySize, multiplieur) != verif + arraySize;
+        if(!(isPresent))
+        {
+        multiplieur = random(1, 12);
+        break;
+        }
+        }
         verif[i] = multiplieur;
+        //poser la question à l'utilisateur
         int bonneReponse{proposition * multiplieur};
         cout << "Combien font " << proposition << " X " << multiplieur << " ?" << endl;
         cin >> reponse;
-
+        //vérifictaion de sa réponse
         if (reponse == bonneReponse)
         {
             cout << "Bravo, continuons" << endl;
@@ -47,7 +57,7 @@ int main()
             mauvaiseReponse = mauvaiseReponse + 1;
         }
     }
-
+    // dire le score
     if ((bonneReponse = 1) && (mauvaiseReponse = 1))
     {
         cout << "Tu as eu " << bonneReponse << " bonnes réponses et " << mauvaiseReponse << " mauvaise reponse." << endl;
