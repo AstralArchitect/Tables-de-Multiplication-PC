@@ -20,8 +20,8 @@ int main()
     int verif[12];
     auto proposition{0};
     auto reponse{0};
-    auto mauvaiseReponse{0};
-    auto bonneReponse{0};
+    auto mauvaiseReponses{0};
+    auto bonneReponses{0};
     cin >> proposition;
 
     for (size_t i = 0; i < 12 /*c'est nombre de fois que tu veux répéter cette boucle */; i++)
@@ -48,36 +48,36 @@ int main()
         if (reponse == bonneReponse)
         {
             cout << "Bravo, continuons" << endl;
-            bonneReponse = bonneReponse + 1;
+            bonneReponses = bonneReponses + 1;
         }
         else
         {
             cout << "mauvaise réponse" << endl;
             cout << "la réponse était : " << bonneReponse << endl;
-            mauvaiseReponse = mauvaiseReponse + 1;
+            mauvaiseReponses = mauvaiseReponses + 1;
         }
     }
     // dire le score
-    if ((bonneReponse = 1) && (mauvaiseReponse = 1))
+    if ((bonneReponses == 1) && (mauvaiseReponses == 1))
     {
-        cout << "Tu as eu " << bonneReponse << " bonnes réponses et " << mauvaiseReponse << " mauvaise reponse." << endl;
+        cout << "Tu as eu " << bonneReponses << " bonnes réponses et " << mauvaiseReponses << " mauvaise reponse." << endl;
     }
-    if ((bonneReponse != 1) && (mauvaiseReponse = 1))
+    if ((bonneReponses != 1) && (mauvaiseReponses == 1))
     {
-        cout << "Tu as eu " << bonneReponse << " bonnes réponses et " << mauvaiseReponse << " mauvaise reponse." << endl;
+        cout << "Tu as eu " << bonneReponses << " bonnes réponses et " << mauvaiseReponses << " mauvaise reponse." << endl;
     }
-    if ((bonneReponse = 1) && (mauvaiseReponse != 1))
+    if ((bonneReponses == 1) && (mauvaiseReponses != 1))
     {
-        cout << "Tu as eu " << bonneReponse << " bonne réponse et " << mauvaiseReponse << " mauvaises reponses." << endl;
+        cout << "Tu as eu " << bonneReponses << " bonne réponse et " << mauvaiseReponses << " mauvaises reponses." << endl;
     }
-    if ((bonneReponse != 1) && (mauvaiseReponse != 1))
+    if ((bonneReponses != 1) && (mauvaiseReponses != 1))
     {
-        cout << "Tu as eu " << bonneReponse << " bonne réponse et " << mauvaiseReponse << " mauvaise reponse." << endl;
+        cout << "Tu as eu " << bonneReponses << " bonne réponse et " << mauvaiseReponses << " mauvaise reponse." << endl;
     }
-    cout << "ce qui te fait un score de " << bonneReponse << "/12 !" << endl;
-    if (bonneReponse < 7)
+    cout << "ce qui te fait un score de " << int((float(bonneReponses) / 12.0) * 20.0) << "/20 !" << endl;
+    if (bonneReponses < 7)
     {
-        cout << "il va faloir réviser tes tables de multiplications";
+        cout << "il va faloir réviser tes tables de multiplications" << "\n" << endl;
     }
     return 0;
 }
