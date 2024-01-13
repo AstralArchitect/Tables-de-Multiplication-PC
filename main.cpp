@@ -1,4 +1,5 @@
 #include <iostream>
+#include <algorithm>
 #include <random>
 
 std::random_device rd;
@@ -27,19 +28,8 @@ int main()
     {
         //vérification pour ne pas répéter plusieurs fois la même question
         int multiplieur{random(1, 12)};
-        int a = 0;
-        while (a = 1)
-        {
-            if ((multiplieur != verif[1]) && (multiplieur != verif[2]) && (multiplieur != verif[3]) && (multiplieur != verif[4]) && (multiplieur != verif[5]) && (multiplieur != verif[6]) && (multiplieur != verif[7]) && (multiplieur != verif[8]) && (multiplieur != verif[9]) && (multiplieur != verif[10]) && (multiplieur != verif[11]) && (multiplieur != verif[12]))
-            {
-                a = 1;
-            }
-            else
-            {
-                multiplieur = random(1, 12);
-            }
-            
-        }
+        int arraySize = sizeof(verif) / sizeof(*verif);
+        bool isPresent = std::find(data, data + arraySize, target) != data + arraySize;
         verif[i] = multiplieur;
         int bonneReponse{proposition * multiplieur};
         cout << "Combien font " << proposition << " X " << multiplieur << " ?" << endl;
@@ -48,13 +38,13 @@ int main()
         if (reponse == bonneReponse)
         {
             cout << "Bravo, continuons" << endl;
-            bonneReponse += 1;
+            bonneReponse = bonneReponse + 1;
         }
         else
         {
             cout << "mauvaise réponse" << endl;
             cout << "la réponse était : " << bonneReponse << endl;
-            mauvaiseReponse += 1;
+            mauvaiseReponse = mauvaiseReponse + 1;
         }
     }
 
