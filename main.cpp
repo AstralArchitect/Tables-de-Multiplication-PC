@@ -60,24 +60,32 @@ int main()
     // dire le score
     if ((bonneReponses == 1) && (mauvaiseReponses == 1))
     {
-        cout << "Tu as eu " << bonneReponses << " bonnes réponses et " << mauvaiseReponses << " mauvaise reponse." << endl;
+        cout << "Tu as eu " << bonneReponses << " bonnes réponses et " << mauvaiseReponses << " mauvaise reponse," << "ce qui te fait un score de " << int((float(bonneReponses) / 12.0) * 20.0) << "/20 !" << endl;
     }
     if ((bonneReponses != 1) && (mauvaiseReponses == 1))
     {
-        cout << "Tu as eu " << bonneReponses << " bonnes réponses et " << mauvaiseReponses << " mauvaise reponse." << endl;
+        cout << "Tu as eu " << bonneReponses << " bonnes réponses et " << mauvaiseReponses << " mauvaise reponse," << "ce qui te fait un score de " << int((float(bonneReponses) / 12.0) * 20.0) << "/20 !" << endl;
     }
     if ((bonneReponses == 1) && (mauvaiseReponses != 1))
     {
-        cout << "Tu as eu " << bonneReponses << " bonne réponse et " << mauvaiseReponses << " mauvaises reponses." << endl;
+        cout << "Tu as eu " << bonneReponses << " bonne réponse et " << mauvaiseReponses << " mauvaises reponses," << "ce qui te fait un score de " << int((float(bonneReponses) / 12.0) * 20.0) << "/20 !" << endl;
     }
     if ((bonneReponses != 1) && (mauvaiseReponses != 1))
     {
-        cout << "Tu as eu " << bonneReponses << " bonne réponse et " << mauvaiseReponses << " mauvaise reponse." << endl;
+        cout << "Tu as eu " << bonneReponses << " bonne réponse et " << mauvaiseReponses << " mauvaise reponse," <<  "ce qui te fait un score de " << int((float(bonneReponses) / 12.0) * 20.0) << "/20 !" << endl;
     }
-    cout << "ce qui te fait un score de " << int((float(bonneReponses) / 12.0) * 20.0) << "/20 !" << endl;
     if (bonneReponses < 7)
     {
         cout << "il va faloir réviser tes tables de multiplications" << "\n" << endl;
     }
+    if ((bonneReponses > 7) && (bonneReponses != 12))
+    {
+        cout << "Bravo, mais tu pouvez faire encore mieux." << "\n" << endl;
+    }
+    if (bonneReponses == 12)
+    {
+        cout << "Exellent, tu t'en es vraiment bien sorti !" << "\n" << endl;
+    }
+    
     return 0;
 }
