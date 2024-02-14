@@ -15,7 +15,7 @@ int main()
         int bonneReponse = table * i;
         printf("Combien font %d X %i ? :", table, i);
         scanf("%d", &reponse);
-        //vérifictaion de sa réponse
+        //vérifictaion de la réponse
         if (reponse == bonneReponse)
         {
             score++;
