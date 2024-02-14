@@ -27,17 +27,10 @@ int main()
         }
     }
     // dire le score
-    if (score > 1)
-    {
-        printf("Vous avez eu %d bonnes reponses, ce qui te fait un score de %d/10 !\n", score, score);
-    }
-    else if (score == 1)
-    {
-        printf("Vous avez eu %d bonne reponse, ce qui te fait un score de %i/10 !\n", score, score);
-    }
+    printf("Vous avez eu un score de %d/20 !\n", score * 2);
     if (score < 7)
     {
-        printf("Il va faloir réviser tes tables de multiplications !\n");
+        printf("Il va faloir reviser tes tables de multiplications !\n");
     }
     else if (score < 7 && score != 10)
     {
