@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main()
 {
@@ -40,6 +41,6 @@ int main()
     {
         printf("Exellent, vous etes un pro de tables de multiplications !\n");
     }
-    
+    system("pause");
     return 0;
 }
