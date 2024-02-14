@@ -29,7 +29,7 @@ int main()
     // dire le score
     if (score > 1)
     {
-        printf("Vous avez eu %d bonnes reponses, ce qui te fait un score de %d/20 !\n", score, score * score);
+        printf("Vous avez eu %d bonnes reponses, ce qui te fait un score de %d/10 !\n", score, score);
     }
     else if (score == 1)
     {
