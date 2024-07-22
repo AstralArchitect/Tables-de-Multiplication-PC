@@ -1,8 +1,13 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
+#include <stdbool.h>
+
+bool array_contain(int array[10], int num);
 
 int main()
 {
+    srand(time(NULL));
     int table;
     int reponse;
     int score = 0;
@@ -10,11 +15,24 @@ int main()
     printf("Quelle table de multiplication voulez-vous reviser ?\n");
     scanf("%d", &table);
 
+    int reponsesListe[10];
     for (int i = 0; i < 10; i++)
     {
+        reponsesListe[i] = 11;
+    }
+    
+
+    for (int i = 0; i < 10; i++)
+    {
+        int randomNumber = rand() % 10;
+        while (array_contain(reponsesListe, randomNumber))
+        {
+            randomNumber = rand() % 10;
+        }
+        reponsesListe[i] = randomNumber;
         //poser la question à l'utilisateur
-        int bonneReponse = table * i;
-        printf("Combien font %d X %i ? :", table, i);
+        int bonneReponse = table * randomNumber;
+        printf("Combien font %d X %i ? :", table, randomNumber);
         scanf("%d", &reponse);
         //vérifictaion de la réponse
         if (reponse == bonneReponse)
@@ -43,4 +61,16 @@ int main()
     }
     system("pause");
     return 0;
+}
+
+bool array_contain(int array[10], int num)
+{
+    for (int i = 0; i < 10; i++)
+    {
+        if (array[i] == num)
+        {
+            return true;
+        }
+    }
+    return false;
 }
