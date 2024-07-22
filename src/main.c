@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <conio.h>
+#include <stdlib.h>
 
 int main()
 {
@@ -10,7 +10,7 @@ int main()
     printf("Quelle table de multiplication voulez-vous reviser ?\n");
     scanf("%d", &table);
 
-    for (int i = 0; i < 10 /*c'est nombre de fois que tu veux répéter cette boucle */; i++)
+    for (int i = 0; i < 10; i++)
     {
         //poser la question à l'utilisateur
         int bonneReponse = table * i;
